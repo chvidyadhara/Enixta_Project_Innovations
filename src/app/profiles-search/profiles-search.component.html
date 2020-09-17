@@ -1,0 +1,63 @@
+<div class="container backgroudclo">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <div class="input-group">
+                <input type="text" class="form-control" [(ngModel)]="searchText"
+                    aria-label="Amount (to the nearest dollar)">
+                <div class="input-group-append">
+                    <span class="input-group-text">$</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="mt-3 ml-3"> Total Results:{{this.userdisplay.length}}</div>
+    <div class="row justify-content-center">
+        <div class="card" *ngFor="let userdis of userdisplay | searchpipe:{username: searchText}; let i=index;">
+            <div class="card-body justify-content-center">
+                <div class="flex-container">
+                    <img class="card-img-top  rounded-circle" src="{{userdis.imageurl}}" alt="Card image"
+                        style="width:15%">
+                    <div class="flex-child">
+                        <h5 class="ml-3">{{userdis.username}}</h5>
+                        <p class="ml-3">{{userdis.profileurl}}</p>
+                        <h6 class="mt-3 ml-3">Data One: {{userdis.dataone}}</h6>
+                        <h6 class="mt-3 ml-3">Data Two: {{userdis.datatwo}}</h6>
+                    </div>
+                </div>
+                <div class="flexd">
+                    <button class="btn btn-success"
+                        (click)="showDiv.next = !showDiv.next;showDiv.previous = false;showDiv.current = false">
+                        Details
+                    </button>
+                </div>
+                <div *ngIf="showDiv.next" class="mds mt-3">
+                    <h6>Data Lable: {{userdis.datalable}}</h6>
+                    <h6>Data Lable: {{userdis.datalable}}</h6>
+                    <h6>Data Lable: {{userdis.datalable}}</h6>
+                    <h6>Data Lable: {{userdis.datalable}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="paginationtab">
+        <pagination [boundaryLinks]="true" [totalItems]="77" previousText="&lsaquo;" nextText="&rsaquo;"
+            firstText="&laquo;" lastText="&raquo;">
+        </pagination>
+    </div>
+</div>

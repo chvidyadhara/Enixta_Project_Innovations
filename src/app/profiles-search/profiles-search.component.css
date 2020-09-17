@@ -1,0 +1,41 @@
+
+
+.container{
+    background-color: aliceblue;
+}
+.card{
+    margin: 10px;
+    width: 80%;
+}
+.cardlef ul{
+  float: right;
+}
+.flex-container {
+    display: flex;
+}
+
+.flexd{
+    float:right;
+    
+}
+.mds{
+    text-align: center;
+    margin-top: 50px !important
+}
+.mds h6{
+    padding: 10px;
+}
+.backgroudclo{
+    background-color: blue;
+    padding: 8px;
+    
+}
+/* .input-group{
+    float: right;
+} */
+.paginationtab{
+    float: right;
+}
+.card-body {
+    margin-top: 30px;
+}
